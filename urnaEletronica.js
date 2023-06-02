@@ -1,6 +1,6 @@
 function inicio()
 	{
-		inteiro 
+		let 
 			codigoVoto,
 			votosTotais = 0, 
 			votosCandidato1 = 0, 
@@ -10,7 +10,7 @@ function inicio()
 			votosNulo = 0,
 			votosTotaisGanhador = 0
 		
-		real 
+		let 
 			percentualVotosCandidato1 = 0.0, 
 			percentualVotosCandidato2 = 0.0,
 			percentualVotosCandidato3 = 0.0,
@@ -18,13 +18,13 @@ function inicio()
 			percentualVotosNulo = 0.0,
 			percentualGanhador = 0.0
 		
-		cadeia
+		let
 			nomeCandidato1 = "Name 1",
 			nomeCandidato2 = "Name 2",
 			nomeCandidato3 = "Name 3",
 			nomeGanhador = ""
 			
-		logico 
+		let
 			opcaoInvalida = false
 			
 		// Laço responsável pela votação
