@@ -1,5 +1,6 @@
-function inicio()
+ function inicio()
 	{
+		
 		let 
 			codigoVoto,
 			votosTotais = 0, 
@@ -19,13 +20,14 @@ function inicio()
 			percentualGanhador = 0.0
 		
 		let
-			nomeCandidato1 = "Name 1",
-			nomeCandidato2 = "Name 2",
+			nomeCandidato1 = "Jonas",
+			nomeCandidato2 = "Jino",
 			nomeCandidato3 = "Name 3",
 			nomeGanhador = ""
 			
 		let
 			opcaoInvalida = false
+
 			
 		// Laço responsável pela votação
 		 {
@@ -46,59 +48,64 @@ function inicio()
 			console.log("0 | Encerrar a votação \n\n")
 	
 			console.log(">> Digite agora o código do seu voto: ")
-			prompt(codigoVoto)
+			codigoVoto = prompt("Digite agora o código do seu voto: ")
 	
-			prompt(codigoVoto) {
+			codigoVoto = prompt("Digite agora o código do seu voto: "); {
+
+				switch(codigoVoto) {
+
+				case 0:
+					break;
 				
-				case 0;
-					break
+				case 1:
+					votosCandidato1++;
+					votosTotais++;
+					break;
 				
-				case 1;
-					votosCandidato1++
-					votosTotais++
-					break
+				case 2:
+					votosCandidato2++;
+					votosTotais++;
+					break;
 				
-				case 2;
-					votosCandidato2++
-					votosTotais++
-					break
+				case 3:
+					votosCandidato3++;
+					votosTotais++;
+					break;
 				
-				case 3;
-					votosCandidato3++
-					votosTotais++
-					break
+				case 5:
+					votosBranco++;
+					votosTotais++;
+					break;
 				
-				case 5;
-					votosBranco++
-					votosTotais++
-					break
+				case 8:
+					votosNulo++;
+					votosTotais++;
+					break;
 				
-				case 8;
-					votosNulo++
-					votosTotais++
-					break
-				
-				case default;
-					opcaoInvalida = true
+				default:
+					opcaoInvalida = true;
+
+				}
 			}
+			
 			
 		} while (codigoVoto != 0)
 
 		
 		// determinar o ganhador, sem situação de empate
-		if (votosCandidato1 > votosCandidato2 e votosCandidato1 > votosCandidato3) 
+		if (votosCandidato1 > votosCandidato2 e votosCandidato1 > votosCandidato3)
 		{	
 			nomeGanhador = nomeCandidato1
 			votosTotaisGanhador = votosCandidato1 + votosBranco
 		} 
 		
-		if (votosCandidato2 > votosCandidato1 e votosCandidato2 > votosCandidato3) 
+		if (votosCandidato2 > votosCandidato1 e votosCandidato2 > votosCandidato3)
 		{	
 			nomeGanhador = nomeCandidato2
 			votosTotaisGanhador = votosCandidato2 + votosBranco
 		} 
 		
-		if (votosCandidato3 > votosCandidato1 e votosCandidato3 > votosCandidato2)
+		if (votosCandidato3 > votosCandidato1 e votosCandidato3 > votosCandidato2) 
 		{
 			nomeGanhador = nomeCandidato3
 			votosTotaisGanhador = votosCandidato3 + votosBranco
@@ -129,9 +136,9 @@ function inicio()
 			console.log("Votos nulos: ", votosNulo, " (", 
 				(votosNulo) / (votosTotais) * 100.0, "%)\n\n")
 				
-		} else if 
+		} else if //Arrumar essa linha 
 			
-			console.log("** Nenhum voto registrado\n")
+		console.log("** Nenhum voto registrado**\n")
 			
 		}
 
@@ -140,11 +147,12 @@ function inicio()
 		console.log(nomeGanhador, " com ", votosTotaisGanhador, " votos (", 
 			percentualGanhador, "%) somados os votos em branco\n")
 		
-	}
-}
+	}		
+	
+
 
 function audioConfirmacao() {
-    const audio = new Audio("./confirma-urna.mp3")
+    const audio = new Audio("./assets/confirma-urna.mp3")
     audio.play();
 
 }
