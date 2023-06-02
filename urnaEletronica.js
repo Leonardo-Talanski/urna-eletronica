@@ -25,16 +25,16 @@ function inicio()
 			nomeGanhador = ""
 			
 		logico 
-			opcaoInvalida = falso
+			opcaoInvalida = false
 			
 		// Laço responsável pela votação
 		 {
 			
-			limpa()
+			console.clear()
 			
 			if (opcaoInvalida) {
 				console.log("** Opção inválida! \n\n")
-				opcaoInvalida = falso
+				opcaoInvalida = false
 			}
 			
 			console.log("** Opções de voto: \n\n")
@@ -51,35 +51,35 @@ function inicio()
 			prompt(codigoVoto) {
 				
 				case 0;
-					pare
+					break
 				
 				case 1;
 					votosCandidato1++
 					votosTotais++
-					pare
+					break
 				
 				case 2;
 					votosCandidato2++
 					votosTotais++
-					pare
+					break
 				
 				case 3;
 					votosCandidato3++
 					votosTotais++
-					pare
+					break
 				
 				case 5;
 					votosBranco++
 					votosTotais++
-					pare
+					break
 				
 				case 8;
 					votosNulo++
 					votosTotais++
-					pare
+					break
 				
 				case default;
-					opcaoInvalida = verdadeiro
+					opcaoInvalida = true
 			}
 			
 		} while (codigoVoto != 0)
@@ -104,7 +104,7 @@ function inicio()
 			votosTotaisGanhador = votosCandidato3 + votosBranco
 		} 
 		
-		limpa()
+		console.clear()
 		console.log("** Resultado da apuração desta urna\n\n")
 		
 		// Esta condição evita a divisão por 0 caso a votação seja encerrada sem nenhum voto
@@ -141,4 +141,10 @@ function inicio()
 			percentualGanhador, "%) somados os votos em branco\n")
 		
 	}
+}
+
+function audioConfirmacao() {
+    const audio = new Audio("./confirma-urna.mp3")
+    audio.play();
+
 }
